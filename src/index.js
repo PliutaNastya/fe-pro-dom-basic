@@ -7,7 +7,7 @@ export const paintCards = () => {
 };
 
 export const findElement = () => {
-  for (let elem of document.getElementsByTagName('li')) {
+  for (let elem of document.querySelector('li').nextElementSibling) {
     if (elem.matches('.likedItem')) {
       return (elem.style.backgroundColor = 'blue');
     }
