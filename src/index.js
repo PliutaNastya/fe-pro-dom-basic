@@ -7,9 +7,20 @@ export const paintCards = () => {
 };
 
 export const findElement = () => {
-  for (let elem of document.querySelector('li').nextElementSibling) {
+  // for (let elem of document.getElementsByTagName('li')) {
+  //   if (elem.matches('.likedItem')) {
+  //     return (elem.style.backgroundColor = 'blue');
+  //   }
+  // }
+
+  // Через nextElementSibling
+  let elem = document.querySelector('li');
+  while (elem) {
     if (elem.matches('.likedItem')) {
-      return (elem.style.backgroundColor = 'blue');
+      elem.style.backgroundColor = 'blue';
+      break;
+    } else {
+      elem = elem.nextElementSibling;
     }
   }
 };
